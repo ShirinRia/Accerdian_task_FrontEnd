@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme) => ({
         fontSize: '48px !important',
         paddingTop: '5px',
         paddingBottom: '25px',
-        color:"darkblue"
+        color: "darkblue"
     }
 }));
 const grey = {
@@ -38,16 +38,16 @@ const Extra1 = () => {
             .then(res => res.json())
             .then(data => setservices(data))
     }, [])
-    
-// bgcolor: grey[200],
+
+    // bgcolor: grey[200],
     return (
-        <Container maxWidth='xl' sx={{  my: 8, py: 4 }}>
+        <Container maxWidth='xl' sx={{ my: 8, py: 4 }}>
             <Typography className={classes.typo} textAlign='center' >
                 Courses We Provide
             </Typography>
 
             <Box sx={{
-                display: 'grid',  justifyContent: 'center',  gridTemplateColumns: {sm:'repeat(1, 1fr)', md:'repeat(2, 1fr)'}, columnGap: 1,
+                display: 'grid', justifyContent: 'center', gridTemplateColumns: { sm: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }, columnGap: 1,
                 rowGap: 3,
             }}>
                 {services.map(service => <Extracard key={service.id} service={service}></Extracard>)}

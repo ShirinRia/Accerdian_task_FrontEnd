@@ -12,12 +12,12 @@ const Routes = createBrowserRouter([
     {
         path: "/",
         element: <Root />,
-        errorElement: <Errorpage/>,
+        errorElement: <Errorpage />,
         children: [
             {
                 path: "/",
                 element: <Home />,
-                // loader:() =>fetch('/partnership.json'),
+
             },
             {
                 path: "login",
@@ -30,8 +30,8 @@ const Routes = createBrowserRouter([
         ],
 
     },
-   
-    
+
+
 ]);
 
 export default Routes;
