@@ -100,6 +100,7 @@ const Signup = () => {
 
         const name = data.name
         const email = data.email
+        const _id=crypto.MD5(data.name+data.email).toString()
         const password = crypto.SHA512(data.password).toString()
         const confpassword = crypto.SHA512(data.confpassword).toString()
         if (password != confpassword) {
@@ -111,7 +112,7 @@ const Signup = () => {
             })
         }
         else {
-            const newuserdata = { name, email, password }
+            const newuserdata = { _id,name, email, password }
             console.log(newuserdata);
 
             mutation.mutate(newuserdata)

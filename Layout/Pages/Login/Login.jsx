@@ -60,7 +60,7 @@ const Login = () => {
     const onSubmit = async (data) => {
         console.log(data)
         const email = data.email
-        const password = crypto.SHA512(data.password).toString()
+        const password = crypto.SHA512(data.email+data.password).toString()
 
         // Signed in 
 
