@@ -5,11 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 
 import Container from '@mui/material/Container';
 
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 
 import './Navbar.css'
 import useAuth from '../../../Hooks/useAuth';
+import { Button } from '@mui/material';
 
 
 const grey = {
@@ -26,9 +27,12 @@ const grey = {
 };
 
 const Navbar = () => {
-
-const {user}=useAuth()
-
+const navigate=useNavigate()
+const {user,setuser}=useAuth()
+const logout=()=>{
+setuser(false);
+navigate('/login');
+}
   return (
     <AppBar position="static" sx={{ bgcolor: grey[100], paddingBottom: 2 }}>
       <Container maxWidth="xl">
@@ -44,9 +48,9 @@ const {user}=useAuth()
          
           <Box sx={{ flexGrow: 0, fontWeight: 600, fontSize: 20 }}>
             {user ?
-              <Link to={'/login'} > Log out </Link>
+              <Button sx={{fontWeight:600, fontSize:18}} onClick={logout} > Log out </Button>
               :
-              <Link to={'/login'} > Log in </Link>
+              <Button sx={{fontWeight:600, fontSize:18}} href={'/login'} > Log in </Button>
 
             }
            
