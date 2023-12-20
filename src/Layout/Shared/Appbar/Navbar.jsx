@@ -5,7 +5,7 @@ import Toolbar from '@mui/material/Toolbar';
 
 import Container from '@mui/material/Container';
 
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import logo from '../../../assets/logo.png'
 
 import './Navbar.css'
